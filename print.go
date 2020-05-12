@@ -17,7 +17,7 @@ func init() {
 	networkNames = map[string]string{}
 
 	output, _ := exec.Command("powershell", "Get-Printer", "|", "select", "-exp", "name").Output()
-	log.Println(string(output))
+	// log.Println(string(output))
 	names := strings.Fields(strings.ToLower(string(output)))
 	for _, v := range names {
 		if len(v) > 2 && v[0:2] == "\\\\" {
