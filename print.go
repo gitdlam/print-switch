@@ -13,9 +13,7 @@ var (
 	networkNames map[string]string
 )
 
-
-
-func SetupCache() {
+func init() {
 	networkNames = map[string]string{}
 	output, _ := exec.Command("powershell", "Get-Printer", "|", "select", "-exp", "name").Output()
 	// log.Println(string(output))
@@ -30,6 +28,7 @@ func SetupCache() {
 
 	}
 }
+
 
 func printOneDocument(printerName, documentName string, output []byte) error {
 	p, err := printer.Open(printerName)
