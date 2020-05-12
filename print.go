@@ -2,7 +2,7 @@ package printing
 
 import (
 	"io/ioutil"
-	"log"
+	//"log"
 	"os/exec"
 	"strings"
 
