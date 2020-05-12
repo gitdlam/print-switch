@@ -13,9 +13,10 @@ var (
 	networkNames map[string]string
 )
 
-func init() {
-	networkNames = map[string]string{}
 
+
+func SetupCache() {
+	networkNames = map[string]string{}
 	output, _ := exec.Command("powershell", "Get-Printer", "|", "select", "-exp", "name").Output()
 	// log.Println(string(output))
 	names := strings.Fields(strings.ToLower(string(output)))
