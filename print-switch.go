@@ -1,5 +1,4 @@
-// print-switch
-package printSwitch
+package printing
 
 import (
 	"io/ioutil"
